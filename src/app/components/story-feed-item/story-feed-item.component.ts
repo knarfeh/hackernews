@@ -16,7 +16,9 @@ export class StoryFeedItemComponent implements OnInit {
   public domain: string;
   public ws: string;
   extractHostname(url) {
-    if (!url) return undefined;
+    if (!url) {
+      return undefined;
+    }
     let hostname;
     if (url.indexOf('://') > -1) {
       hostname = url.split('/')[2];

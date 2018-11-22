@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, from } from 'rxjs';
 import { map, tap, flatMap } from 'rxjs/operators';
 
@@ -7,19 +7,16 @@ import { map, tap, flatMap } from 'rxjs/operators';
 export class HackernewsApiService {
   private cacheFeed: string[];
   private cacheFeedSize: number;
-  constructor(private _api: Http) {}
+  constructor(private _api: HttpClient) {}
 
   getFeed(feedType): Observable<any> {
     return this._api
       .get(`https://hacker-news.firebaseio.com/v0/${feedType}.json`)
-      .pipe(map(data => data.json()))
       .pipe(tap(data => ((this.cacheFeed = data), (this.cacheFeedSize = data.length))));
   }
 
   getFeedItem(itemId): Observable<any> {
-    return this._api
-      .get(`https://hacker-news.firebaseio.com/v0/item/${itemId}.json`)
-      .pipe(map(data => data.json()));
+    return this._api.get(`https://hacker-news.firebaseio.com/v0/item/${itemId}.json`);
   }
 
   getFeedItemInRange(feedType, startCount, endCount): Observable<any> {
@@ -36,14 +33,10 @@ export class HackernewsApiService {
   }
 
   getUser(userId): Observable<any> {
-    return this._api
-      .get(`https://hacker-news.firebaseio.com/v0/user/${userId}.json`)
-      .pipe(map(data => data.json()));
+    return this._api.get(`https://hacker-news.firebaseio.com/v0/user/${userId}.json`);
   }
 
   getCommentTree(commentId): Observable<any> {
-    return this._api
-      .get(`https://hacker-news.firebaseio.com/v0/item/${commentId}.json`)
-      .pipe(map(data => data.json()));
+    return this._api.get(`https://hacker-news.firebaseio.com/v0/item/${commentId}.json`);
   }
 }

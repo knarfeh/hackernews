@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
             id: data.id,
             karma: data.karma,
             about: data.about,
-            created: moment.unix(parseInt(data.created)).fromNow()
+            created: moment.unix(parseInt(data.created, 10)).fromNow()
           };
         },
         error => console.log(error)
