@@ -1,13 +1,12 @@
 {
-  "name": "hackernews-clone",
+  "name": "hackernews",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --build-optimizer --aot",
-    "deploy": "ng build --prod --build-optimizer --aot --base-href https://kapillamba4.github.io/hackernews-clone/ && cp ./dist/index.html ./dist/404.html && ./node_modules/.bin/angular-cli-ghpages --no-silent",
-    "surge": "npm run build && cp ./dist/index.html ./dist/404.html && surge -p dist/ -d https://hackernews-clone.surge.sh/ && xdg-open https://hackernews-clone.surge.sh/ >/dev/null",
+    "deploy": "ng build --prod --build-optimizer --aot --base-href https://hn.nujeh.com/ && cp ./dist/index.html ./dist/404.html && ./node_modules/.bin/angular-cli-ghpages --cname hn.nujeh.com --no-silent",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -15,7 +14,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/kapillamba4/hackernews-clone.git"
+    "url": "https://github.com/knarfeh/hackernews.git"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
@@ -40,7 +39,7 @@
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
-    "angular-cli-ghpages": "^0.5.2",
+    "angular-cli-ghpages": "^0.5.3",
     "codelyzer": "^4.0.1",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
