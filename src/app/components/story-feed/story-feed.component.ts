@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { HackernewsApiService } from '../../services/hackernews-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import * as moment from 'moment';
   templateUrl: './story-feed.component.html',
   styleUrls: ['./story-feed.component.scss']
 })
-export class StoryFeedComponent implements OnInit {
+export class StoryFeedComponent implements OnInit, OnDestroy {
   private subscription: any;
   public grabbingFeed: boolean;
   public pagination: boolean;

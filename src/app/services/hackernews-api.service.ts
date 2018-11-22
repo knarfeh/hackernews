@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import { map, mergeMap, tap, switchMap, flatMap, filter } from 'rxjs/operators';
-import { forkJoin } from 'rxjs/observable/forkJoin';
-import { combineLatest } from 'rxjs/observable/combineLatest';
-import { from } from 'rxjs/observable/from';
-import { merge } from 'rxjs/observable/merge';
+import { Http } from '@angular/http';
+import { Observable, from } from 'rxjs';
+import { map, tap, flatMap } from 'rxjs/operators';
 
 @Injectable()
 export class HackernewsApiService {
