@@ -2,6 +2,9 @@ $persian-red: rgb(200, 50, 50);
 $red-blend: rgb(213, 50, 52);
 $vivid-red: rgb(226, 50, 55);
 
+// https://stackoverflow.com/questions/42423371/how-do-i-remove-the-blue-border-that-appears-when-clicking-on-a-uib-accordion-he
+:focus {outline:0 !important;}
+
 :host {
   display: flex;
   flex-direction: row;
@@ -43,7 +46,9 @@ $vivid-red: rgb(226, 50, 55);
   background-repeat: no-repeat;
   background-position: center center;
   box-shadow: 0 0 4px 4px $red-blend inset;
+  cursor: pointer;
 }
+
 a{
   color: #FFFFFF;
   text-decoration: none;
