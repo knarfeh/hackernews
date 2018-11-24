@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod --build-optimizer --aot --base-href https://hn.nujeh.com/",
-    "deploy": "ng build --prod --build-optimizer --aot --base-href https://hn.nujeh.com/ && cp ./dist/index.html ./dist/404.html && ./node_modules/.bin/angular-cli-ghpages --name 'knarfeh' --email 'hejun1874@gmail.com' --cname hn.nujeh.com --no-silent",
+    "deploy": "ng build --prod --build-optimizer --aot --base-href https://hn.nujeh.com/ && cp ./dist/index.html ./dist/404.html && cp -r ./.circleci ./dist/ && ./node_modules/.bin/angular-cli-ghpages --name 'knarfeh' --email 'hejun1874@gmail.com' --cname hn.nujeh.com --no-silent",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
