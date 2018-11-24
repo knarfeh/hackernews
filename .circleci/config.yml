@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    branches:
+      ignore:
+        - gh-pages
+    working_directory: ~/hackernews
+    docker:
+      - image: circleci/node:chakracore-8.11-browsers
+    steps:
+      - checkout
+      - run:
+          name: pre install
+          command: 'sudo npm install --unsafe-perm --force'
+      - run:
+          name: ci
+          command: npm run lint
